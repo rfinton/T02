@@ -12,16 +12,18 @@ Their hopes are to make it an interactive app between the people in charge
 App will have tabs inside of it.
 
 * Tabs
-  * Keep a budget
+  * Keep a budget - Rachel
     * table clothes, Center Pieces, ect...
   * vendors/Guest list
     * Sync guest list with Facebook.
     * Sounds like they want communication through Facebook as well
     * Manually input guest list if wanted.
-  * menu
+  * menu - Rachel
     * Menus for event, plus allergies notice and alt. choice.
-  * schedule
+  * schedule - Krishna
     * Keep track of event dates and plans.
   * Inventory
     * How many Tables, ect...
-
+* Other Items
+  * Facebook - Ray
+  * Login - Ray
