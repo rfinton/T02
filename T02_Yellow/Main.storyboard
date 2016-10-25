@@ -82,7 +82,7 @@
         <!--Event Manager-->
         <scene sceneID="dNq-I4-euV">
             <objects>
-                <viewController title="Event Manager" id="TYc-y0-nxn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Event Manager" title="Event Manager" id="TYc-y0-nxn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="orZ-Ge-lhc"/>
                         <viewControllerLayoutGuide type="bottom" id="eyJ-Og-Uh5"/>
@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTi-gO-mBN">
-                                <frame key="frameInset" minX="162" minY="137" width="50" height="30"/>
+                                <frame key="frameInset" minX="161" minY="236" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Budget"/>
                                 <connections>
@@ -139,23 +139,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYt-ca-qon">
-                                <frame key="frameInset" minX="159" minY="185" width="57" height="30"/>
+                                <frame key="frameInset" minX="159" minY="290" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Vendors"/>
                                 <connections>
                                     <segue destination="XjP-dV-cMP" kind="show" id="6hs-GU-rbT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCV-ar-paB">
-                                <frame key="frameInset" minX="172" minY="235" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu"/>
-                                <connections>
-                                    <segue destination="OB3-mE-UoM" kind="show" id="ncn-di-n8A"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eef-C7-JMg">
-                                <frame key="frameInset" minX="155" minY="283" width="64" height="30"/>
+                                <frame key="frameInset" minX="155" minY="399" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Schedule"/>
                                 <connections>
@@ -163,7 +155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmi-d0-Uty">
-                                <frame key="frameInset" minX="135" minY="321" width="104" height="30"/>
+                                <frame key="frameInset" minX="135" minY="537" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Venue / Guests"/>
                                 <connections>
@@ -177,6 +169,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCV-ar-paB">
+                                <frame key="frameInset" minX="167" minY="346" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="OB3-mE-UoM" kind="show" id="ncn-di-n8A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
