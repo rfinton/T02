@@ -15,7 +15,7 @@ App will have tabs inside of it.
   * Keep a budget - Rachel
     * table clothes, Center Pieces, ect...
   * vendors/Guest list - Ray
-    * Sync guest list with Facebook.
+    * Sync guest list with Facebook.
     * Sounds like they want communication through Facebook as well. 
     * Manually input guest list if wanted.
   * menu - Rachel
