@@ -14,7 +14,7 @@ App will have tabs inside of it.
 * Tabs
   * Keep a budget - Rachel
     * table clothes, Center Pieces, ect...
-  * vendors/Guest list
+  * vendors/Guest list - Ray
     * Sync guest list with Facebook.
     * Sounds like they want communication through Facebook as well
     * Manually input guest list if wanted.
@@ -22,8 +22,7 @@ App will have tabs inside of it.
     * Menus for event, plus allergies notice and alt. choice.
   * schedule - Krishna
     * Keep track of event dates and plans.
-  * Inventory
+  * Inventory - Christopher
     * How many Tables, ect...
 * Other Items
-  * Facebook - Ray
   * Login - Ray
