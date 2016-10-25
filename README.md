@@ -11,7 +11,7 @@ Their hopes are to make it an interactive app between the people in charge
 
 App will have tabs inside of it.
 
-Tabs
+* Tabs
   * Keep a budget
     * table clothes, Center Pieces, ect...
   * vendors/Guest list
