@@ -9,7 +9,7 @@
         <!--LoginScreen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="LoginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="HRAD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="T02_Yellow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1801" y="1540"/>
         </scene>
-        <!--Item 1-->
+        <!--Event Manager-->
         <scene sceneID="dNq-I4-euV">
             <objects>
-                <viewController id="TYc-y0-nxn" sceneMemberID="viewController">
+                <viewController title="Event Manager" id="TYc-y0-nxn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="orZ-Ge-lhc"/>
                         <viewControllerLayoutGuide type="bottom" id="eyJ-Og-Uh5"/>
@@ -109,13 +109,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="902-GW-vtL">
-                                <frame key="frameInset" minX="87" minY="72" width="200" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
