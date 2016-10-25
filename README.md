@@ -16,7 +16,9 @@ App will have tabs inside of it.
     * table clothes, Center Pieces, ect...
   * vendors/Guest list - Ray
     * Sync guest list with Facebook.
+    
     * Sounds like they want communication through Facebook as well
+    
     * Manually input guest list if wanted.
   * menu - Rachel
     * Menus for event, plus allergies notice and alt. choice.
