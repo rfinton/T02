@@ -17,6 +17,14 @@
 		52A58AC91DB692C9003C1F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A58AC81DB692C9003C1F51 /* Main.storyboard */; };
 		52A58ACA1DB692C9003C1F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A58AC81DB692C9003C1F51 /* Main.storyboard */; };
 		52A58ACB1DB692C9003C1F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A58AC81DB692C9003C1F51 /* Main.storyboard */; };
+		52EF97551DD039B400B24D82 /* Budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF974E1DD039B400B24D82 /* Budget.storyboard */; };
+		52EF97561DD039B400B24D82 /* EventInfoPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF974F1DD039B400B24D82 /* EventInfoPage.storyboard */; };
+		52EF97571DD039B400B24D82 /* EventManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF97501DD039B400B24D82 /* EventManager.storyboard */; };
+		52EF97581DD039B400B24D82 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF97511DD039B400B24D82 /* Menu.storyboard */; };
+		52EF97591DD039B400B24D82 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF97521DD039B400B24D82 /* Schedule.storyboard */; };
+		52EF975A1DD039B400B24D82 /* Vendors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF97531DD039B400B24D82 /* Vendors.storyboard */; };
+		52EF975B1DD039B400B24D82 /* VenueGuestList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52EF97541DD039B400B24D82 /* VenueGuestList.storyboard */; };
+		52EF975D1DD03A4200B24D82 /* ProtegeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF975C1DD03A4200B24D82 /* ProtegeEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +60,14 @@
 		52A58ABB1DB68FB1003C1F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52A58AC71DB68FED003C1F51 /* T02_Yellow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = T02_Yellow.entitlements; sourceTree = "<group>"; };
 		52A58AC81DB692C9003C1F51 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		52EF974E1DD039B400B24D82 /* Budget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Budget.storyboard; sourceTree = "<group>"; };
+		52EF974F1DD039B400B24D82 /* EventInfoPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventInfoPage.storyboard; sourceTree = "<group>"; };
+		52EF97501DD039B400B24D82 /* EventManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventManager.storyboard; sourceTree = "<group>"; };
+		52EF97511DD039B400B24D82 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		52EF97521DD039B400B24D82 /* Schedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		52EF97531DD039B400B24D82 /* Vendors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Vendors.storyboard; sourceTree = "<group>"; };
+		52EF97541DD039B400B24D82 /* VenueGuestList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VenueGuestList.storyboard; sourceTree = "<group>"; };
+		52EF975C1DD03A4200B24D82 /* ProtegeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtegeEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +118,18 @@
 		52A58A951DB68FB1003C1F51 /* T02_Yellow */ = {
 			isa = PBXGroup;
 			children = (
+				52A58AC81DB692C9003C1F51 /* Main.storyboard */,
+				52EF974E1DD039B400B24D82 /* Budget.storyboard */,
+				52EF974F1DD039B400B24D82 /* EventInfoPage.storyboard */,
+				52EF97501DD039B400B24D82 /* EventManager.storyboard */,
+				52EF975C1DD03A4200B24D82 /* ProtegeEvent.swift */,
+				52EF97511DD039B400B24D82 /* Menu.storyboard */,
+				52EF97521DD039B400B24D82 /* Schedule.storyboard */,
+				52EF97531DD039B400B24D82 /* Vendors.storyboard */,
+				52EF97541DD039B400B24D82 /* VenueGuestList.storyboard */,
 				52A58AC71DB68FED003C1F51 /* T02_Yellow.entitlements */,
 				52A58A961DB68FB1003C1F51 /* AppDelegate.swift */,
 				52A58A981DB68FB1003C1F51 /* ViewController.swift */,
-				52A58AC81DB692C9003C1F51 /* Main.storyboard */,
 				52A58AA01DB68FB1003C1F51 /* Assets.xcassets */,
 				52A58AA21DB68FB1003C1F51 /* LaunchScreen.storyboard */,
 				52A58AA51DB68FB1003C1F51 /* Info.plist */,
@@ -245,9 +269,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EF975A1DD039B400B24D82 /* Vendors.storyboard in Resources */,
+				52EF97581DD039B400B24D82 /* Menu.storyboard in Resources */,
+				52EF97561DD039B400B24D82 /* EventInfoPage.storyboard in Resources */,
 				52A58AC91DB692C9003C1F51 /* Main.storyboard in Resources */,
 				52A58AA41DB68FB1003C1F51 /* LaunchScreen.storyboard in Resources */,
+				52EF975B1DD039B400B24D82 /* VenueGuestList.storyboard in Resources */,
 				52A58AA11DB68FB1003C1F51 /* Assets.xcassets in Resources */,
+				52EF97551DD039B400B24D82 /* Budget.storyboard in Resources */,
+				52EF97571DD039B400B24D82 /* EventManager.storyboard in Resources */,
+				52EF97591DD039B400B24D82 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A58A991DB68FB1003C1F51 /* ViewController.swift in Sources */,
+				52EF975D1DD03A4200B24D82 /* ProtegeEvent.swift in Sources */,
 				52A58A971DB68FB1003C1F51 /* AppDelegate.swift in Sources */,
 				52A58A9F1DB68FB1003C1F51 /* T02_Yellow.xcdatamodeld in Sources */,
 			);
@@ -515,6 +547,7 @@
 				52A58AC01DB68FB1003C1F51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52A58AC11DB68FB1003C1F51 /* Build configuration list for PBXNativeTarget "T02_YellowTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +556,7 @@
 				52A58AC31DB68FB1003C1F51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52A58AC41DB68FB1003C1F51 /* Build configuration list for PBXNativeTarget "T02_YellowUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +565,7 @@
 				52A58AC61DB68FB1003C1F51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
