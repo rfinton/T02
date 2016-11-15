@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="1932" y="-709"/>
         </scene>
-        <!--Budget Navigation-->
+        <!--BudgetView-->
         <scene sceneID="9Zg-J9-YXI">
             <objects>
-                <viewControllerPlaceholder storyboardName="Budget" referencedIdentifier="Budget Navigation" id="5oC-r3-iuX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Budget" referencedIdentifier="BudgetView" id="5oC-r3-iuX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15f-Vr-z4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1931" y="353"/>
