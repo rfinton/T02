@@ -17,11 +17,12 @@ class DatabaseManagement {
         check = false
         let triggerString = baseString + "/" + method
         print("\n\n\n\n\n"+triggerString)
+
         let url = URL(string: triggerString)
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url!) {(data,response,error) in
-            guard error == nil else{
+        let task = session.dataTask(with: url!) { (data,response,error) in
+            guard error == nil else {
                 print("Error in session call:\(error)")
                 return
             }

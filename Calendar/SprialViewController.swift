@@ -93,6 +93,8 @@ class SprialViewController: UIViewController,CircleMenuDelegate{
             return
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 

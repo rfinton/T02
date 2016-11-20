@@ -7,64 +7,82 @@
 //
 
 import UIKit
-import CoreData
 
-class Budget {
-    public var amount: Float
-    public var spent: Float {
+
+struct Budget {
+    var id: Int = SprialViewController.eventId!
+    var amount: Float = 0.00
+    var spent: Float = 0.00 {
         didSet {
             self.remaining = self.amount - self.spent
         }
     }
-    public var remaining: Float
-    public var categories: [BudgetCategory]
+    var remaining: Float
     
     
-    init() {
-        self.amount = 0.00
-        self.spent = 0.00
-        self.remaining = 0.00
-        self.categories = []
+    init(_ amt: Float) {
+        self.amount = amt
+        self.remaining = amt
     }
 }
 
 
 
 
-class BudgetCategory {
-    public var name: String
-    public var items: [CategoryItem]
+struct Category {
+    var id: Int = SprialViewController.eventId!
+    var budget: Float = 0.00
+    var name: String
+    
+    init(_ name: String, _ amt: Float) {
+        self.name = name
+        self.budget = amt
+    }
+}
+
+
+
+
+struct Item {
+    var id: Int = SprialViewController.eventId!
+    var category_name = ""
+    var item_name: String
+    var cost: Float
+    var deposit: Float
+    var balance_due: Float
+    var balance_due_date: String
+    var paid_by: String
     
     
     init(_ name: String) {
-        self.name = name
-        self.items = []
+        self.item_name = name
+        self.cost = 0.00
+        self.deposit = 0.00
+        self.balance_due = self.cost - self.deposit
+        self.balance_due_date = ""
+        self.paid_by = ""
     }
 }
 
 
 
 
-class CategoryItem {
-    public var title: String
-    public var budget: Float
-    public var actual: Float
-    public var depositPaid: Float
-    public var balanceDue: Float
-    public var balanceDueDate: Date?
-    public var paidBy: String
-    
-    
-    init(_ title: String) {
-        self.title = title
-        self.budget = 0.00
-        self.actual = 0.00
-        self.depositPaid = 0.00
-        self.balanceDue = 0.00
-        self.balanceDueDate = nil
-        self.paidBy = ""
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
