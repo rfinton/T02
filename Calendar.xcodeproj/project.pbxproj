@@ -13,7 +13,6 @@
 		2462BEDD1DE029F30090BF25 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BEDC1DE029F30090BF25 /* TaskViewController.swift */; };
 		2462BEDF1DE048820090BF25 /* Logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 2462BEDE1DE048820090BF25 /* Logout.png */; };
 		2462BEE11DE04B700090BF25 /* USERINFO.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2462BEE01DE04B700090BF25 /* USERINFO.plist */; };
-		24B509391DCC77C200543838 /* BudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B509381DCC77C200543838 /* BudgetTableViewController.swift */; };
 		24B5093B1DCC77F900543838 /* VenueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5093A1DCC77F900543838 /* VenueTableViewController.swift */; };
 		24B5093E1DCC78F600543838 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5093D1DCC78F600543838 /* LoginViewController.swift */; };
 		24B509401DCC7CE400543838 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5093F1DCC7CE400543838 /* EventDetailsViewController.swift */; };
@@ -70,7 +69,6 @@
 		2462BEDC1DE029F30090BF25 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		2462BEDE1DE048820090BF25 /* Logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logout.png; sourceTree = "<group>"; };
 		2462BEE01DE04B700090BF25 /* USERINFO.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = USERINFO.plist; sourceTree = "<group>"; };
-		24B509381DCC77C200543838 /* BudgetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetTableViewController.swift; sourceTree = "<group>"; };
 		24B5093A1DCC77F900543838 /* VenueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTableViewController.swift; sourceTree = "<group>"; };
 		24B5093D1DCC78F600543838 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		24B5093F1DCC7CE400543838 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				243AAB711DC6A68500ED67A2 /* CellView.xib */,
 				24E0A01C1DC6A4FF002BAC2B /* ScheduleViewController.swift */,
 				24B5093A1DCC77F900543838 /* VenueTableViewController.swift */,
-				24B509381DCC77C200543838 /* BudgetTableViewController.swift */,
 				24F3526D1DCC32E8003F2C2F /* GuestListViewController.swift */,
 				243AAB731DC6A75100ED67A2 /* CellView.swift */,
 			);
@@ -567,7 +564,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24B509391DCC77C200543838 /* BudgetTableViewController.swift in Sources */,
 				24E0A01D1DC6A4FF002BAC2B /* ScheduleViewController.swift in Sources */,
 				5280DD421DE28F410062B75D /* CategoryViewController.swift in Sources */,
 				5280DD401DE28F410062B75D /* Budget.swift in Sources */,

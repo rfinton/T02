@@ -10,9 +10,9 @@ import UIKit
 
 class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    public static var budget = Budget(2000)             // Need to get this variable from DB!
-    public static var categories: [Category] = []       // Need to get this variable from DB!
-    public static var items: [String: [Item]] = [:]     // Need to get this variable from DB!
+    public static var budget: Budget!
+    public static var categories: [Category] = []
+    public static var items: [String: [Item]] = [:]
     
     @IBOutlet weak var categoriesTable: UITableView!
     @IBOutlet weak var budgetLabel: UILabel!
@@ -26,9 +26,10 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetchCategories(SprialViewController.eventId!)
-        //fetchItems(id: SprialViewController.eventId!)
+        print("Line 29 - EventKeys: \(SprialViewController.event?.allKeys)")
         
+        let _amount = Float(SprialViewController.event?["budget"]! as! String)!
+        BudgetViewController.budget = Budget(_amount)
         
         //navigationItem.rightBarButtonItem = editButtonItem
         //navigationItem.rightBarButtonItem?.action = #selector(editCategoryTable)
