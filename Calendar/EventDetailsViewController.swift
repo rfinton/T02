@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
 class EventDetailsViewController: UIViewController {
 
+   
+   
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var budget: UITextField!
@@ -38,6 +39,7 @@ class EventDetailsViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         datePicker.minimumDate = Date()
+        
         // Do any additional setup after loading the view.
     }
 

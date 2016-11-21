@@ -10,6 +10,9 @@ target 'Calendar' do
     pod 'MBProgressHUD','~> 0.9.0'
     pod 'EVContactsPicker'
     pod 'CircleMenu', '~> 2.0.1'
+    pod 'Toaster', '~> 2.0'
+    pod 'SAConfettiView'
+    pod 'DataEntryToolbar'
   target 'CalendarTests' do
     inherit! :search_paths
     # Pods for testing

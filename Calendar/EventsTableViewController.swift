@@ -10,20 +10,44 @@ import UIKit
 
 class EventsTableViewController: UITableViewController {
    
-  
-    var tableViewData:NSMutableArray? = []
-    
-    func retriveData() {
-        tableViewData = LoginViewController.dbOjbect.triggerDatabase(method: "retriveEvents/\(LoginViewController.uname!)")
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        alert()
         
-        print(tableViewData)
-        self.tableView.reloadData()
     }
+    func alert()
+    {
+       
+        let alertController = UIAlertController(title: "Logout", message:"Remove \"\(LoginViewController.uname!)\"  from instant login?", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Confirm", style:.destructive ,handler: confirmActionHandler)
+        let guestAction =  UIAlertAction(title: "Cancel", style:.default ,handler: nil)
+        alertController.addAction(confirmAction)
+        alertController.addAction(guestAction)
+        self.present(alertController,animated: true,completion: nil)
+    }
+    func confirmActionHandler(action:UIAlertAction){
+        var plistURL:URL!
+        var myPlist:NSMutableDictionary!
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDir = urls[0]
+        plistURL = documentDir.appendingPathComponent("USERINFO.plist")
+        myPlist = NSMutableDictionary(contentsOf: plistURL)
+        if myPlist == nil {      let bundleURL = Bundle.main.url(forResource: "USERINFO",withExtension: "plist");      do {         try FileManager.default.copyItem(at: bundleURL!, to: plistURL)      } catch {        print("Error copying property list: \(error)")      }
+            myPlist = NSMutableDictionary(contentsOf:plistURL)    }
+        myPlist.setValue("", forKey: "uname")
+        myPlist.write(to: plistURL, atomically: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    var tableViewData:NSMutableArray? = []
+    func retriveData()
+    {
     
+     tableViewData = LoginViewController.dbOjbect.triggerDatabase(method: "retriveEvents/\(LoginViewController.uname!)")
+     self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
+        
+            // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -31,6 +55,11 @@ class EventsTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        //self.navigationItem.backBarButtonItem?.title = ""
+       // self.navigationController?.title = "Events"
+        //self.navigationController?.navigationBar.backItem?.title = "Events"
         retriveData()
         
     }
@@ -113,6 +142,8 @@ class EventsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.destination is SprialViewController {
+            self.navigationItem.setHidesBackButton(false, animated: true)
+
             let retrivedRow  = tableViewData?[(self.tableView.indexPathForSelectedRow!.row)] as! NSDictionary
             let id = (retrivedRow["eventId"] as! String)
             SprialViewController.event = retrivedRow

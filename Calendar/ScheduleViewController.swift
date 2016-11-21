@@ -49,6 +49,7 @@ extension ScheduleViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.dateBelongsTo == .thisMonth {
            
             myCustomCell.dayLabel.textColor =  UIColor(colorWithHexValue: 0x574865)
+            
             myCustomCell.isUserInteractionEnabled = true
         } else {
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
@@ -71,12 +72,43 @@ extension ScheduleViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         return formattedDate
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        //handleCellSelection(view: cell, cellState: cellState)
-      
+        dataSource?.removeAllObjects()
+        var index = 0
+        for x in dates{
+            print(index)
+            if x == date {
+                dataSource?.add(tableViewData?[index])
+            }
+            index = index + 1
+        }
+        if dataSource?.count != 0 {
+            tasksTableView.reloadData()
+            
+        }
+        handleCellSelection(view: cell, cellState: cellState , date: date)
+
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         //handleCellSelection(view: cell, cellState: cellState)
+        //dataSource?.removeAllObjects()
+        //tasksTableView.reloadData()
+        //handleCellSelection(view: cell, cellState: cellState , date: date)
+        print("Selected")
+        dataSource?.removeAllObjects()
+        var index = 0
+        for x in dates{
+            if x == date {
+                dataSource?.add(tableViewData?[index])
+            }
+            index = index + 1
+        }
+        if dataSource?.count != 0 {
+            print(dataSource)
+            tasksTableView.reloadData()
+            
+        }
+        handleCellSelection(view: cell, cellState: cellState , date: date)
         
     }
     
@@ -85,7 +117,7 @@ extension ScheduleViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             return
         }
     
-        if cellState.isSelected && dates.contains(date){
+        if dates.contains(date){
         
             myCustomCell.selectedView.layer.cornerRadius =  14
             myCustomCell.selectedView.isHidden = false
@@ -96,17 +128,27 @@ extension ScheduleViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
 }
 
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController, UITableViewDataSource{
 
-  
+    @IBAction func unwind(segue:UIStoryboardSegue){
+        print(segue.source)
+        if let source = segue.source as? TaskViewController {
+           // let id = source.json?[0]
+            
+           // let dict = ["date":"\(source.dateFormat(datePicker: source.date!))","name":"\(source.tn)","todoId":"\(id)"] as AnyObject
+           // tableViewData?.add(dict)
+            viewDidLoad()
+        }
+    }
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var tasksTableView: UITableView!
      var testCalendar = Calendar.current
     
     var tableViewData:NSMutableArray? = []
     var dates = [Date]()
-    
+    var dataSource:NSMutableArray? = []
     func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
         guard let startDate = visibleDates.monthDates.first else {
             return
@@ -121,9 +163,10 @@ class ScheduleViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewData?.removeAllObjects()
+        dates.removeAll()
         //Retrive dates
         tableViewData = LoginViewController.dbOjbect.triggerDatabase(method: "getCalendarTasks/\(SprialViewController.eventId!)")
-        print(tableViewData?.count)
         
         if tableViewData?.count != 0 {
         
@@ -132,9 +175,8 @@ class ScheduleViewController: UIViewController {
             let date = stngToDate(dateStr: (y["date"] as! String))
             dates.insert(date, at: dates.count)
             }
-            
         }
-    
+       
         // Do any additional setup after loading the view, typically from a nib.
         calendarView.animationsEnabled = true
         calendarView.dataSource = self
@@ -145,8 +187,12 @@ class ScheduleViewController: UIViewController {
         calendarView.visibleDates { (visibleDates: DateSegmentInfo) in
             self.setupViewsOfCalendar(from: visibleDates)
         }
-        self.calendarView.selectDates(dates, triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.calendarView.selectDates(dates, triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
+
     }
     func stngToDate(dateStr:String)->Date
     {
@@ -161,7 +207,25 @@ class ScheduleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Daily tasks"
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return (dataSource?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableCell" , for: indexPath)
+        let record = dataSource?[indexPath.row] as! NSDictionary
+        let name = (record["name"] as! String)
+        cell.textLabel?.text = name
+        return cell
+    }
+    
 
 }
 

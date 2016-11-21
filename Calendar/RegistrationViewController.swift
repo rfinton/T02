@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SAConfettiView
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var username: UITextField!
@@ -24,7 +24,14 @@ class RegistrationViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
+       let confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.type = .Triangle
+       
+        self.view.addSubview(confettiView)
+         self.view.sendSubview(toBack: confettiView)
+        confettiView.startConfetti()
+        //self.navigationItem.hidesBackButton = true
+
         // Do any additional setup after loading the view.
     }
    
@@ -36,7 +43,7 @@ class RegistrationViewController: UIViewController {
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+   
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
         let un = username?.text?.stringByRemovingWhitespaces
         let pd = password?.text?.stringByRemovingWhitespaces

@@ -1,0 +1,6 @@
+framework module DataEntryToolbar {
+  umbrella header "DataEntryToolbar-umbrella.h"
+
+  export *
+  module * { export * }
+}

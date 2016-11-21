@@ -17,9 +17,12 @@ class LoginViewController: UIViewController {
     static let dbOjbect = DatabaseManagement()
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    var plistURL:URL!
+    var myPlist:NSMutableDictionary!
+    var un:String?
     static var uname:String?
     @IBAction func logIn(_ sender: UIButton) {
-        let un = username?.text?.stringByRemovingWhitespaces
+        un = username?.text?.stringByRemovingWhitespaces
         let pd = password?.text?.stringByRemovingWhitespaces
         
         if un?.characters.count != 0 && pd?.characters.count != 0 {
@@ -27,6 +30,8 @@ class LoginViewController: UIViewController {
             let y = x[0] as! NSDictionary
             let z = Int(y["count(1)"]! as! String)
             if  z != 0 {
+                self.myPlist.setValue(un, forKey: "uname")
+                self.myPlist.write(to: self.plistURL, atomically: true)
                 print("Login Segue")
                 performSegue(withIdentifier: "LogInSegue", sender: nil)
             }
@@ -38,12 +43,39 @@ class LoginViewController: UIViewController {
         textField.resignFirstResponder()
         return true
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDir = urls[0]
+        plistURL = documentDir.appendingPathComponent("USERINFO.plist")
+        myPlist = NSMutableDictionary(contentsOf: plistURL)
+        if myPlist == nil {      let bundleURL = Bundle.main.url(forResource: "USERINFO",withExtension: "plist");      do {         try FileManager.default.copyItem(at: bundleURL!, to: plistURL)      } catch {        print("Error copying property list: \(error)")      }
+              myPlist = NSMutableDictionary(contentsOf:plistURL)    }
+       
+        let plistUname = myPlist["uname"] as! String
+        if plistUname.characters.count != 0 {
+             un = plistUname
+             self.performSegue(withIdentifier: "LogInSegue", sender: self)
+             print(un)
+        }
         
-        // Do any additional setup after loading the view.
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        password.text = ""
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    
+        
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +90,8 @@ class LoginViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.destination is EventsTableViewController {
-            LoginViewController.uname = username?.text?.stringByRemovingWhitespaces
+            LoginViewController.uname = un
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
         
     }

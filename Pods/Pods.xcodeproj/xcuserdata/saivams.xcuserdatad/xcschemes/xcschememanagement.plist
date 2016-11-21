@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DataEntryToolbar-DataEntryToolbar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DataEntryToolbar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EVContactsPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,10 +49,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SAConfettiView-SAConfettiView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAConfettiView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Toaster.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1E0BEE6BAB87A66D72D22DBF0C0895A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21CC862FE866DD2C4CEB5E9DA074C1C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4286E41F0636D41601F9B51A5E998BB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4FADCD2D7842CCC7FA08BE1673CA708F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5FE87E855EE48A8EA498828B2AA31867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6B1714E816AE794962516E2ECBB40A5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>933BDF64B32F4414290DD3FDCCAE2021</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A51B3C801ACB2ECC93675B50A2AC5BF6</key>
+		<key>D0EA04A60248241EB89752C18D6420A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0EA04A60248241EB89752C18D6420A4</key>
+		<key>F84AAFA7C69ECC68ED47AF77631D35EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

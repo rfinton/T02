@@ -43,9 +43,15 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchCategories(SprialViewController.eventId!)
         fetchItems(id: SprialViewController.eventId!)
         
+        print("Line 46 - EventID: \(SprialViewController.eventId!)")
+        
         self.budgetLabel.text = "$" + String(format: "%.2f", BudgetViewController.budget.amount)
         self.spentLabel.text = "$" + String(format: "%.2f", BudgetViewController.budget.spent)
         self.remainingLabel.text = "$" + String(format: "%.2f", BudgetViewController.budget.remaining)
+        
+        if BudgetViewController.budget.spent > BudgetViewController.budget.amount {
+            self.remainingLabel.textColor = UIColor.red
+        }
     }
     
     
@@ -55,18 +61,52 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
             
+            let whitespaces = NSCharacterSet.whitespaces
+            
             // Grab form values
             let name: String = (alertController.textFields?[0].text)!
-            let budget: Float = Float((alertController.textFields?[1].text)!)!
+            //let budget: Float = Float((alertController.textFields?[1].text)!)!
             
             // Create temp category variable
-            let category = Category(name, budget)
-            BudgetViewController.categories.append(category)
-            self.categoriesTable.reloadData()
+            //let category = Category(name, budget)
+            //BudgetViewController.categories.append(category)
+            //self.categoriesTable.reloadData()
+            //self.addCategory(category)
             
-            //BudgetViewController.items[name] = []
-            self.addCategory(category)
+            
+            // Check if a field is empty
+            if alertController.textFields?[0].text?.trimmingCharacters(in: whitespaces) == "" || alertController.textFields?[1].text == "" {
+                
+                let alert = UIAlertController(title: "Cannot Save", message: "One of the fields were empty", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }
+            else {
+                
+                // Name does not need to be checked
+                let name: String = (alertController.textFields?[0].text)!
+                
+                // Make sure Budget text field is a float.
+                if let budget: Float = Float((alertController.textFields?[1].text)!) {
+                    let category = Category(name, budget)
+                    self.addCategory(category)
+                    BudgetViewController.categories.append(category)
+                    self.categoriesTable.reloadData()
+                }
+                else {
+                    let alert = UIAlertController(title: "Cannot Save", message: "Budget field not a valid entry", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            
         })
+        
+        
+        
+        
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
@@ -249,6 +289,11 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             else {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [[String: Any]] {
+                        
+                        if json.isEmpty == true {
+                            return
+                        }
+                        
                         for d in json {
                             let temp = Category(d["name"]! as! String, Float(d["budget"]! as! String)!)
                             BudgetViewController.categories.append(temp)
@@ -256,6 +301,7 @@ class BudgetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         
                         DispatchQueue.main.async {
                             self.categoriesTable.reloadData()
+                            print("Line 299 - MainID: \(BudgetViewController.categories[0].id)")
                         }
                     }
                 } catch {

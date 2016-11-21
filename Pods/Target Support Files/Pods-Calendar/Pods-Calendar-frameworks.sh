@@ -85,13 +85,19 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CircleMenu/CircleMenu.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DataEntryToolbar/DataEntryToolbar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EVContactsPicker/EVContactsPicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JTAppleCalendar/JTAppleCalendar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAConfettiView/SAConfettiView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Toaster/Toaster.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CircleMenu/CircleMenu.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DataEntryToolbar/DataEntryToolbar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/EVContactsPicker/EVContactsPicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JTAppleCalendar/JTAppleCalendar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAConfettiView/SAConfettiView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Toaster/Toaster.framework"
 fi

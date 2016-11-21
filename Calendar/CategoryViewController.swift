@@ -73,6 +73,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func setRemaining() -> String {
+        if self.spent > self.budget {
+            self.remainingLabel.textColor = UIColor.red
+        }
         return "$" + String(format: "%.2f", self.budget - self.spent!)
     }
     

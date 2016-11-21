@@ -1,21 +1,30 @@
 PODS:
   - CircleMenu (2.0.1)
+  - DataEntryToolbar (0.2.3)
   - EVContactsPicker (0.5.1)
   - JTAppleCalendar (6.0.1)
   - MBProgressHUD (0.9.2)
+  - SAConfettiView (0.1.8)
+  - Toaster (2.0.1)
 
 DEPENDENCIES:
   - CircleMenu (~> 2.0.1)
+  - DataEntryToolbar
   - EVContactsPicker
   - JTAppleCalendar (~> 6.0)
   - MBProgressHUD (~> 0.9.0)
+  - SAConfettiView
+  - Toaster (~> 2.0)
 
 SPEC CHECKSUMS:
   CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
+  DataEntryToolbar: 0cf657b74c2a2079ec3fc371b677e33d11d620be
   EVContactsPicker: ef3a5920a76c851dbbb22c8c0606e5e01f0e7123
   JTAppleCalendar: 7793cd7284a495ed72b0cad225c1be835eefa018
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
+  Toaster: be65cd48e93a525b2a9cc4bd25a2bfc900e02d9f
 
-PODFILE CHECKSUM: 9bfc3a61bc33889d095136d46db5463f879d98be
+PODFILE CHECKSUM: e2efe7638bac55cf9261ce7115a71d87c71c62f2
 
 COCOAPODS: 1.1.1
